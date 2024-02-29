@@ -22,9 +22,6 @@
                 <textarea type="text" class="form-control"></textarea>
               </div>
               <!-- title, description, color, start date, status and budget, inputs-->
-              <div>
-                <button class="btn btn-sm btn-primary">Save</button>
-              </div>
 
               <div class="mb-5">
                 <label class="form-label">Color</label>
@@ -41,9 +38,51 @@
                 <input type="status" class="form-control" id="inputStatus">
               </div>
 
-              <div class="mb-5">
+              <!--<div class="mb-5">
                 <label class="form-label">Budget</label>
                 <input type="number" class="form-control" id="inputbudget">
+              </div>-->
+
+              <div class="priceContainer">
+                <div class="priceInput">
+                    <div class="priceField">
+                        <span>Minimum Price</span>
+                        <input type="number"
+                                class="minInput"
+                                value="2500">
+                    </div>
+                    <div class="priceField">
+                        <span>Maximum Price</span>
+                        <input type="number"
+                                class="maxInput"
+                                value="8500">
+                    </div>
+                </div>
+                <div class="slideContainer">
+                    <div class="priceSlider">
+                    </div>
+                </div>
+            </div>
+
+        <!-- Slider -->
+                <div class="rangeInput">
+                    <input type="range"
+                            class="min-range"
+                            min="0"
+                            max="10000"
+                            value="2500"
+                            step="1">
+                    <input type="range"
+                            class="max-range"
+                            min="0"
+                            max="10000"
+                            value="8500"
+                            step="1">
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-sm btn-primary">Save</button>
               </div>
         </section>
     </main>
