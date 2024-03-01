@@ -19,7 +19,7 @@
 
               <div class="mb-5">
                 <label class="form-label">Description</label>
-                <textarea type="text" class="form-control"></textarea>
+                <textarea id="inputDescription" type="text" class="form-control"></textarea>
               </div>
               <!-- title, description, color, start date, status and budget, inputs-->
 
@@ -35,15 +35,20 @@
 
               <div class="mb-5">
                 <label class="form-label">Status</label>
-                <input type="status" class="form-control" id="inputStatus">
+                <select class="form-control" id="inputStatus">
+                    <option value="in-progress">In Progress</option>
+                    <option value="queue">Queue</option>
+                    <option value="terminated">Terminated</option>
+                    <option value="processed">Processed</option>
+                </select>
               </div>
 
-              <!--<div class="mb-5">
+              <div class="mb-5">
                 <label class="form-label">Budget</label>
-                <input type="number" class="form-control" id="inputbudget">
-              </div>-->
+                <input type="number" class="form-control" id="inputBudget">
+              </div>
 
-              <div class="priceContainer">
+             <!-- <div class="priceContainer">
                 <div class="priceInput">
                     <div class="priceField">
                         <span>Minimum Price</span>
@@ -64,7 +69,7 @@
                 </div>
             </div>
 
-        <!-- Slider -->
+        
                 <div class="rangeInput">
                     <input type="range"
                             class="min-range"
@@ -79,15 +84,16 @@
                             value="8500"
                             step="1">
                 </div>
-            </div>
+            </div> -->
 
             <div>
-                <button class="btn btn-sm btn-primary">Save</button>
+                <button id="btnSave" class="btn btn-sm btn-primary">Save</button>
               </div>
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigion="anonymous">
-
     </script>
+    <script src="./scripts/task.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>
