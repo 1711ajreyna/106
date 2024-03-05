@@ -12,7 +12,7 @@ function saveTask(){
 
     console.log(title,description,color,date,status,budget,minRange,maxRange)
     //build the object
-    let x = new task(title,description,color,date,status,budget,minRange,maxRange)
+    let newTask = new task(title,description,color,date,status,budget,minRange,maxRange)
     console.log(task)
     //save to server
     function testRequest(){
@@ -30,25 +30,23 @@ function saveTask(){
         });
     }
     //display the task
+	//concatenate task information
+	const taskInfo = `<div class="task-info">
+						<h2>${newTask.title}</h2>
+						<p>Description: ${newTask.description}</p>
+						<p>Color: <span style="background-color:${newTask.color};">${newTask.color}</span></p>
+						<p>Date: ${newTask.date}</p>
+						<p>Status: ${newTask.status}</p>
+						<p>Min Range: ${newTask.minRange}</p>
+						<p>Max Range: ${newTask.maxRange}</p>
+					</div>`;
+	// Append the task information to the list section
+	$("#list").append(taskInfo);
+
+	console.log("Task saved:", newTask);
+
 }
 
-function displayTask(task) {
-	//Create a new <div> element to represent the task
-	let taskDiv = $("<div>").addClass("task");
-	//Populate the task details inside the <div>
-	taskDiv.append(`<h2>${task.title}</h2>`);
-	taskDiv.append(`<p>Description: ${task.description}</p>`);
-	taskDiv.append(`<p>Color: <span style="background-color:${task.color};">${task.color}</span></p>`);
-	taskDiv.append(`<p>Date: ${task.date}</p>`);
-	taskDiv.append(`<p>Status: ${task.status}`);
-	taskDiv.append(`<p>Budget: ${task.budget}`);
-	taskDiv.append(`<p>Min Range: ${task.minRange}</p>`);
-	taskDiv.append(`<p>Max Range: ${task.maxRange}</p>`);
-
-	//Appemd the task <div> to the #list section
-	$("#list").append(taskDiv);
-	console.log(displayTask);
-}
 //establish connection the server
 function testRequest(){
     $.ajax({
@@ -85,7 +83,7 @@ const rangeInputvalue =
 let priceGap = 500; 
 
 // Adding event listners to price input elements 
-const priceInputvalue = 
+/*const priceInputvalue = 
 	document.querySelectorAll(".price-input input"); 
 for (let i = 0; i < priceInputvalue.length; i++) { 
 	priceInputvalue[i].addEventListener("input", e => { 
@@ -168,5 +166,39 @@ for (let i = 0; i < priceInputvalue.length; i++) {
 			} 
 		}); 
 	} 
+}*/
+
+// Adding event listeners to price input elements 
+for (let i = 0; i < rangeInputvalue.length; i++) {
+    rangeInputvalue[i].addEventListener("input", e => {
+        let minVal = parseInt(rangeInputvalue[0].value);
+        let maxVal = parseInt(rangeInputvalue[1].value);
+
+        // Update the slider position
+        updateSlider(minVal, maxVal);
+    });
 }
+
+// Update the slider position based on input values
+function updateSlider(minVal, maxVal) {
+    rangeInputvalue[0].value = minVal;
+    rangeInputvalue[1].value = maxVal;
+
+    let value1 = rangeInputvalue[0].max;
+    let value2 = rangeInputvalue[1].max;
+
+    rangevalue.style.left = `${(minVal / value1) * 100}%`;
+    rangevalue.style.right = `${100 - (maxVal / value2) * 100}%`;
+}
+
+// Add event listeners to range input elements 
+rangevalue.addEventListener("input", e => {
+    let minVal = parseInt(rangeInputvalue[0].value);
+    let maxVal = parseInt(rangeInputvalue[1].value);
+
+    // Update the input values
+    rangeInputvalue[0].value = minVal;
+    rangeInputvalue[1].value = maxVal;
+});
+
 
