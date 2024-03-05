@@ -1,5 +1,6 @@
 class task {
-    constructor(title,description,color,date,status,budget,minRange,maxRange){
+    constructor(title,description,color,date,status,budget,minRange,maxRange)
+    {
         this.title = title;
         this.description = description;
         this.color = color;
@@ -7,6 +8,6 @@ class task {
         this.status = status;
         this.budget = budget;
         this.minRange = minRange;
-        this.maxRange = minRange;
+        this.maxRange = maxRange;
     }
 }

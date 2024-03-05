@@ -10,135 +10,88 @@
 <body>
     <h1>Task manager</h1>
     <main>
-        <section id="list">A</section>
-        <section id="form">
-            <div class="mb-5">
-                <label class="form-label">Title</label>
-                <input type="text" class="form-control" id="inputTitle">
-              </div>
-              <!--something to remove-->
-              <div class="mb-5">
-                <label class="form-label">Description</label>
-                <textarea id="inputDescription" type="text" class="form-control"></textarea>
-              </div>
-              <!-- title, description, color, start date, status and budget, inputs-->
+      <section id="list">A</section>
+      <section id="form">
+        <div class="mb-5">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" id="inputTitle">
+        </div>
 
-              <div class="mb-5">
-                <label class="form-label">Color</label>
-                <input type="color" class="form-control" id="inputColor">
-              </div>
+        <div class="mb-5">
+          <label class="form-label">Description</label>
+          <textarea id="inputDescription" type="text" class="form-control"></textarea>
+        </div>
+        <!-- title, description, color, start date, status and budget, inputs-->
 
-              <div class="mb-5">
-                <label class="form-label">Start Date</label>
-                <input type="datetime-local" class="form-control" id="inputDate">
-              </div>
+        <div class="mb-5">
+          <label class="form-label">Color</label>
+          <input type="color" class="form-control" id="inputColor">
+        </div>
 
-              <div class="mb-5">
-                <label class="form-label">Status</label>
-                <select class="form-control" id="inputStatus">
-                    <option value="in-progress">In Progress</option>
-                    <option value="queue">Queue</option>
-                    <option value="terminated">Terminated</option>
-                    <option value="processed">Processed</option>
-                </select>
-              </div>
+        <div class="mb-5">
+          <label class="form-label">Start Date</label>
+          <input type="datetime-local" class="form-control" id="inputDate">
+        </div>
 
+        <div class="mb-5">
+          <label class="form-label">Status</label>
+          <select class="form-control" id="inputStatus">
+            <option value="in-progress">In Progress</option>
+            <option value="queue">Queue</option>
+            <option value="terminated">Terminated</option>
+            <option value="processed">Processed</option>
+          </select>
+        </div>
               <!--<div class="mb-5">
                 <label class="form-label">Budget</label>
                 <input type="number" class="form-control" id="inputBudget">
               </div>-->
-
-             
-    <div class="main"> 
-      <div class="gfg"> 
-          <p>Budget</p> 
-      </div> 
-      <div class="custom-wrapper"> 
-
-          <div class="price-input-container"> 
-              <div class="price-input"> 
-                  <div class="price-field"> 
-                      <span>Minimum Price</span> 
-                      <input type="number" 
-                             class="min-input" 
-                             value="2500"> 
-                  </div> 
-                  <div class="price-field"> 
-                      <span>Maximum Price</span> 
-                      <input type="number" 
-                             class="max-input" 
-                             value="8500"> 
-                  </div> 
-              </div> 
-              <div class="slider-container"> 
-                  <div class="price-slider"> 
-                  </div> 
-              </div> 
+        <div class="main"> 
+          <div class="gfg"> 
+              <p>Budget</p> 
           </div> 
+        <div class="custom-wrapper"> 
 
-          <!-- Slider -->
-          <div class="range-input"> 
-              <input type="range" 
-                     class="min-range"
-                     id="minRange" 
-                     min="0" 
-                     max="10000" 
-                     value="2500" 
-                     step="1"> 
-              <input type="range" 
-                     class="max-range"
-                     id="maxRange" 
-                     min="0" 
-                     max="10000" 
-                     value="8500" 
-                     step="1"> 
-          </div> 
-      </div> 
-  </div>
-              <!--<div class="price-container">
-                <div class="price-input">
-                    <div class="price-field">
-                        <span>Minimum Price</span>
-                        <input type="number"
-                                class="minInput"
-                                value="2500">
-                    </div>
-                    <div class="price-field">
-                        <span>Maximum Price</span>
-                        <input type="number"
-                                class="maxInput"
-                                value="8500">
-                    </div>
-                </div>
-                <div class="slide-container">
-                    <div class="price-slider">
-                    </div>
-                </div>
-            </div>
-
-        
-                <div class="range-input">
-                    <input type="range"
-                            class="min-range"
-                            id="minRange"
-                            min="0"
-                            max="10000"
-                            value="2500"
-                            step="1">
-                    <input type="range"
-                            class="max-range"
-                            id="maxRange"
-                            min="0"
-                            max="10000"
-                            value="8500"
-                            step="1">
-                </div>
-            </div>-->
-
-            <div>
-                <button id="btnSave" class="btn btn-sm btn-primary">Save</button>
-              </div>
-        </section>
+        <div class="price-input-container"> 
+            <div class="price-input"> 
+                <div class="price-field"> 
+                    <span>Minimum Price</span> 
+                    <input type="number" 
+                            class="min-input" 
+                            value="2500"> 
+                </div> 
+                <div class="price-field"> 
+                    <span>Maximum Price</span> 
+                    <input type="number" 
+                            class="max-input" 
+                            value="8500"> 
+                </div> 
+            </div> 
+            <div class="slider-container"> 
+                <div class="price-slider"> 
+                </div> 
+            </div> 
+        </div> 
+        <div class="range-input"> 
+            <input type="range" 
+                  class="min-range"
+                  id="minRange" 
+                  min="0" 
+                  max="10000" 
+                  value="2500" 
+                  step="1"> 
+            <input type="range" 
+                  class="max-range"
+                  id="maxRange" 
+                  min="0" 
+                  max="10000" 
+                  value="8500" 
+                  step="1"> 
+        </div>           
+        <div>
+            <button id="btnSave" class="btn btn-sm btn-primary">Save</button>
+        </div>
+      </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigion="anonymous">
     </script>

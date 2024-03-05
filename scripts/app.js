@@ -13,24 +13,69 @@ function saveTask(){
     console.log(title,description,color,date,status,budget,minRange,maxRange)
     //build the object
     let x = new task(title,description,color,date,status,budget,minRange,maxRange)
-    console.log(x)
+    console.log(task)
     //save to server
-
+    function testRequest(){
+        $.ajax({
+            type: "POST",
+            url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+            data: JSON.stringify(task),
+            contentType: "application/json",
+            success: function(response){
+                console.log(response);
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    }
     //display the task
 }
 
+function displayTask(task) {
+	//Create a new <div> element to represent the task
+	let taskDiv = $("<div>").addClass("task");
+	//Populate the task details inside the <div>
+	taskDiv.append(`<h2>${task.title}</h2>`);
+	taskDiv.append(`<p>Description: ${task.description}</p>`);
+	taskDiv.append(`<p>Color: <span style="background-color:${task.color};">${task.color}</span></p>`);
+	taskDiv.append(`<p>Date: ${task.date}</p>`);
+	taskDiv.append(`<p>Status: ${task.status}`);
+	taskDiv.append(`<p>Budget: ${task.budget}`);
+	taskDiv.append(`<p>Min Range: ${task.minRange}</p>`);
+	taskDiv.append(`<p>Max Range: ${task.maxRange}</p>`);
+
+	//Appemd the task <div> to the #list section
+	$("#list").append(taskDiv);
+	console.log(displayTask);
+}
+//establish connection the server
+function testRequest(){
+    $.ajax({
+        type: "GET",
+        url: "http://fsdiapi.azurewebsites.net/",
+        success: function(response){
+            console.log(response);
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
+}
+
 function init(){
-    console.log("this is the task Manager")
+    console.log("this is the task Manager");
     //load data
 
     //hook events
-    $("#btnSave").click(saveTask)
+    $("#btnSave").click(saveTask);
     //document.getElementById("btnSave")
 }
 //when the page loads execute the init function
 window.onload = init;
 
-// Script.js 
+
+// Min and Max budget fields with slider
 const rangevalue = 
 	document.querySelector(".slider-container .price-slider"); 
 const rangeInputvalue = 
@@ -124,3 +169,4 @@ for (let i = 0; i < priceInputvalue.length; i++) {
 		}); 
 	} 
 }
+
